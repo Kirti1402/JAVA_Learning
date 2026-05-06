@@ -19,6 +19,4 @@ class Employee {
            e1.sal = 50000;
            e1.display();
     }
-
-    
 }
