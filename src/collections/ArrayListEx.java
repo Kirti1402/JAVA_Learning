@@ -69,7 +69,23 @@ public class ArrayListEx {
          // The list returned by Arrays.asList does not support structural modifications such as adding or removing elements.
          // If you try to add or remove elements from the list returned by Arrays.asList, it will throw an UnsupportedOperationException.
          // However, you can modify the existing elements in the list using the set() method, and those changes will be reflected in the original array.
-         
+
+         List<Integer> list8 = List.of(1,2,3,4,5); // create an immutable list using List.of() method
+         System.out.println(list8.getClass().getName()); // java.util.ImmutableCollections$List
+
+         //difference between Arrays.asList and List.of
+         //1. Mutability: The list returned by Arrays.asList is mutable, meaning you can modify the elements in the list using the set() method. 
+         // However, you cannot add or remove elements from the list. On the other hand, the list created using List.of is immutable,
+         //  meaning you cannot modify the elements in the list or add/remove elements from it.
+        //2. Null Elements: The list returned by Arrays.asList can contain null elements, while the list created using List.of does not allow null elements.
+
+        List<Integer> list9= new ArrayList<>();
+        list9.addAll(list1);
+        System.out.println("List9 after adding all elements from list1: " + list9); // List9 after adding all elements from list1: []
+        list9.sort(null); // sort method is used to sort the elements in the list. It takes a Comparator as an argument, if we pass null it will use the natural ordering of the elements.
+        Collections.sort(list9);
+        System.out.println("List9 after sorting: " + list9); // List9 after sorting: []
+
 
     }
 }
