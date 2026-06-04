@@ -24,6 +24,16 @@ class MyComparatorDesc implements Comparator<Integer>{
     }
 }
 
+
+//sorting aesc length wise of string
+class MyComparatorStringLengthWiseASC implements Comparator<String>{
+    @Override
+    public int compare(String o1, String o2){
+        return o1.length() - o2.length();
+    }
+}
+
+
 public class ComparatorDemo {
     public static void main(String[] args){
         List<Integer> list1 = new ArrayList<>();
@@ -36,8 +46,18 @@ public class ComparatorDemo {
         list1.sort(new MyComparatorDesc());
         System.out.println("Descending order"+list1);
 
-        List<String> words = Arrays.asList("banana", "apple", "date");
+        List<String> words = Arrays.asList("banana", "apple", "date","ok");
         words.sort(null);
+        words.sort(new MyComparatorStringLengthWiseASC());
         System.out.println(words);
+        List<String> words1 = Arrays.asList("banana", "apple","a" ,"date","ok");
+        words1.sort((a,b)-> a.length()-b.length());
+        System.out.println("Lambda Expression"+words1);
+
     }
 }
+
+
+// if result <  0 first come before second
+// if result > 0  second come before second
+// if result equal then equal
