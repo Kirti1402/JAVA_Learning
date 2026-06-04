@@ -1,5 +1,7 @@
 package collections;
 
+import java.util.*;
+
 class Node{
     public int value;
     public Node next;
@@ -18,6 +20,30 @@ public class LinkedListDemo {
 
         System.out.println(node1.next);
         System.out.println(node2.next);
+
+        //not stored in continious manner
+        LinkedList<Integer> list = new LinkedList<>();
+        list.add(1);
+        list.add(10);
+        list.add(5);
+        list.add(3);
+        list.add(1,14);
+
+        System.out.println(list.get(2));
+        list.addFirst(16);
+        System.out.println(list);
+        System.out.println(list.getLast());
+        System.out.println(list.getClass());
+        System.out.println(list.remove(1));
+        System.out.println(list);
+        
+        LinkedList<String> animal = new LinkedList<>(Arrays.asList("Dog","Elephant","Cat"));
+        LinkedList<String> animalALL = new LinkedList<>(Arrays.asList("Dog","Monkey","Cat"));
+        animalALL.removeAll(animal);
+        System.out.println(animal);
+        System.out.println(animalALL);
+
+
 
     }
     
